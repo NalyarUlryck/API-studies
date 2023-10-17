@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5780f2ce030d632bd47b0bf9b4e95979b1756cab',
+        'reference' => '8e554da3a060b619a293bfb933b765f1e47d25e4',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -376,7 +376,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5780f2ce030d632bd47b0bf9b4e95979b1756cab',
+            'reference' => '8e554da3a060b619a293bfb933b765f1e47d25e4',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -477,6 +477,15 @@
             'aliases' => array(),
             'reference' => 'b6a5854368533df0295c5761a0253656a2e52d9e',
             'dev_requirement' => false,
+        ),
+        'lucascudo/laravel-pt-br-localization' => array(
+            'pretty_version' => 'v2.0.4',
+            'version' => '2.0.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../lucascudo/laravel-pt-br-localization',
+            'aliases' => array(),
+            'reference' => '49589685da70d66a391fbeb05e5cf7aa0f9cf848',
+            'dev_requirement' => true,
         ),
         'mockery/mockery' => array(
             'pretty_version' => '1.6.6',
