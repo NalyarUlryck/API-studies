@@ -42,10 +42,13 @@ class UserController extends Controller
         return new UserResource($user); // -> retorna o usuário cadastrado no formato que foi definido no UserResource
     }
 
-    public function update(Request $request, string $id) // -> aqui estou recebendo tanto o id do usuário que será modificado, como as modificações.
+    public function update(StoreUpdateUserRequest $request, string $id) // -> aqui estou recebendo tanto o id do usuário que será modificado, como as modificações.
     {
+        dd($request->getPassword());
         $data = $request->all();
-        $data['password'] = bcrypt($request->getPassword());
+        if ($request->password) {
+            $data['password'] = bcrypt(dd($request->getPassword()));
+        }
         $user = User::findOrFail($id);
         $user->update($data); // -> Estando tudo certo com $user a requição faz atualização dos dados.
 
