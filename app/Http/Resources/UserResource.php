@@ -18,7 +18,7 @@ class UserResource extends JsonResource
         return [
             //setando os dados que serão retornados ao endpoint
             'id' => $this->id,
-            'name' => strtoupper($this->name),
+            'name' => mb_strtoupper($this->name,'UTF-8'),
             'email' => $this->email,
             'created' => Carbon::make($this->created_at)->format('Y-m-d'),
         ];

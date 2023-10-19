@@ -39,8 +39,8 @@ class StoreUpdateUserRequest extends FormRequest
                 'required',
                 'email',
                 'max:255',
-                // "unique:users,email,{$this->id},id" // -> 1ª forma: permite salver com o mesmo email e também verifica se um novo email já não foi setado
-                Rule::unique('users')->ignore($this->id), // -> 2ª forma: mesma coisa do anterior, porém, mais legível.
+                "unique:users,email,{$this->id},id" // -> 1ª forma: permite salver com o mesmo email e também verifica se um novo email já não foi setado
+                // Rule::unique('users')->ignore($this->id), // -> 2ª forma: mesma coisa do anterior, porém, mais legível.
             ];
         }
         return $rules;
