@@ -12,7 +12,7 @@ use Illuminate\Http\Response;
 class UserController extends Controller
 {
     public function __construct(
-        protected User $repository,
+        protected User $repository, // -> Tranformei todos os Models nesse atributo respository porque o próprio Model é um repositório.
     )
     {
 
@@ -51,11 +51,14 @@ class UserController extends Controller
 
     public function update(StoreUpdateUserRequest $request, string $id) // -> aqui estou recebendo tanto o id do usuário que será modificado, como as modificações.
     {
-        $data = $request->all();
-        if ($request->password) {
-            $data['password'] = bcrypt($request->getPassword());
-        }
         $user = $this->repository->findOrFail($id);
+
+        $data = $request->validated();
+
+        if ($request->password)
+            $data['password'] = bcrypt($request->getPassword());
+
+
         $user->update($data); // -> Estando tudo certo com $user a requição faz atualização dos dados.
 
         return new UserResource($user);
